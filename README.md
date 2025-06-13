@@ -76,7 +76,7 @@ ip add
 
 From the output, locate the IP address assigned to your system. In our case, the IP address was _172.26.123.22_ . This IP will be used later when establishing a remote desktop session or transferring files to and from Kali Linux.
 
-4. **Connecting to Kali Linux via Remote Desktop :**
+**4.** **Connecting to Kali Linux via Remote Desktop :**
 
 ![connection of kali-linux](https://miro.medium.com/v2/resize:fit:916/format:webp/1*SOmeEkb1zHl2OfMo7hP8kg.png)
 
@@ -86,7 +86,7 @@ On your Windows system, open the **Remote Desktop Connection** app (you can simp
 
 A login screen will appear asking for your Kali Linux credentials. Just enter your username and password, and you’ll be logged into the Kali desktop environment — all from your remote device!
 
-5. **Logging into Kali Linux :**
+**5.** **Logging into Kali Linux :**
 
 Once the remote connection is established, you’ll be redirected to the Kali Linux login screen. Here, simply enter the **username** and **password** you set up earlier during the Kali installation.
 
@@ -94,10 +94,10 @@ Once the remote connection is established, you’ll be redirected to the Kali Li
 
 After logging in successfully, you’ll have full access to the Kali Linux desktop environment — ready to explore its powerful tools and features, all from your remote device.
 
-**7. Transfer the ZIP File :**
+**6. Transfer the ZIP File :**
 Once you’re logged into Kali Linux through the remote desktop, the next step is to transfer the file you previously created on your main desktop. This file needs to be copied and pasted into the **Kali Linux desktop environment**.
 
-**8. Preparing the File for John the Ripper :**
+**7. Preparing the File for John the Ripper :**
 
 ![changing the directory](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*cAquEBD5pmkiyjzl8vVUfQ.png)
 
@@ -111,7 +111,7 @@ cd Desktop
 
 This command changes the current working directory to the desktop, allowing you to interact with the file directly from the terminal.
 
-**9. Extracting the Hash from the ZIP File :**
+**8. Extracting the Hash from the ZIP File :**
 
 With the Directory now pointed to the desktop, we can begin using **John the Ripper**. To extract the hash from the ZIP file, use the following command:
 
@@ -125,7 +125,7 @@ In this command, `zip2john` is the tool that processes the ZIP file, and `cybers
 
 After running the command, the system will prompt you to enter your **sudo (admin) password** for authentication. Once authenticated, the tool will output the **encrypted hash** of the ZIP file — this is the data that John the Ripper will attempt to crack.
 
-**10. Saving the Hash to a Text File :**
+**9. Saving the Hash to a Text File :**
 
 The encrypted data output by the `zip2john` command is in **hash format**, which John the Ripper can analyze and crack efficiently. To make the process smoother, we need to save this hash into a text file.
 
@@ -139,7 +139,7 @@ sudo zip2john cybersecurity.zip > hash.txt
 
 This command redirects the hashed output into a file named `hash.txt`. By doing this, we allow John the Ripper to focus directly on the hash file, making the password-cracking process more streamlined and effective.
 
-**11. Cracking the Password Using John the Ripper :**
+**10. Cracking the Password Using John the Ripper :**
 
 Now that the hash has been successfully saved into a text file (`hash.txt`), it’s time to use **John the Ripper** to crack the password.
 
